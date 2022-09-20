@@ -69,9 +69,27 @@ public class SprngbootexampleApplication {
   // UserRepository.deleteById(5);
    //System.out.println("deleted");
    
-   Iterable<users> allUsers =UserRepository.findAll();
-   allUsers.forEach(user->System.out.println(user));
-   UserRepository.deleteAll(allUsers);
+//   Iterable<users> allUsers =UserRepository.findAll();
+//   allUsers.forEach(user->System.out.println(user));
+//   UserRepository.deleteAll(allUsers);
+   
+ // List<users>user= UserRepository.findByName("Ankit");
+  //user.forEach(e->System.out.println(e));
+    
+   List<users>alluser= UserRepository.getAllusers(); 
+   alluser.forEach(e->{
+	   System.out.println(e);
+   }); 
+   
+   System.out.println("______________________________________________");   
+   List<users>userByName=UserRepository.getusersByName("Abhishek","city");
+   userByName.forEach(e->{
+	   System.out.println(e);
+   });
+   
+   
+   System.out.println("______________________________________________");   
+   
+   UserRepository.getUsers().forEach(e-> System.out.println(e));
 	}
-
 }
